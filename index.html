@@ -57,11 +57,16 @@
             margin-top: 32px;
         }
 
-        .menu h2 {
+        h2 {
             font-size: 1.3em;
             font-weight: 600;
             margin-bottom: 16px;
             color: #24292e;
+        }
+
+        p {
+            text-align: justify;
+            margin-bottom: 16px;
         }
 
         .menu-list {
@@ -195,7 +200,7 @@
     <div class="container">
         <header>
             <h1>Pioneer Suite</h1>
-            <p class="tagline">Deligtful graphics, powerful D-based scripting, great performance</p>
+            <p class="tagline">Delightful graphics, powerful D-based scripting, great performance</p>
             <p class="subtitle">All in one cross-platform package</p>
         </header>
 
@@ -208,8 +213,8 @@
 
         <section class="section">
             <h2>Screenshots</h2>
-            <div class="carousel" id="screenshot-carousel">
-                <div class="carousel-track" id="carousel-track">
+            <div class="carousel">
+                <div class="carousel-track">
                     <div class="carousel-item">
                         <img src="./media/screenshot1.png" alt="Screenshot 1" />
                     </div>
@@ -223,14 +228,37 @@
             </div>
         </section>
 
+        <section class="section">
+            <h2>Engine Diagram</h2>
+            <div class="carousel">
+                <div class="carousel-track">
+                    <div class="carousel-item">
+                        <img src="./media/engine_diagram.png" alt="Engine Diagram" />
+                    </div>
+                </div>
+
+                    <a href="./media/engine_diagram.png" target="_blank" rel="noopener noreferrer">View Full Size Diagram</a>
+            </div>
+        </section>
+
 
         <nav class="menu">
             <h2>Main Menu</h2>
             <ul class="menu-list">
-                <li><a href="./devlog/index.md" class="menu-item">Development Logs</a></li>
                 <li><a href="./doxygen/index.html" class="menu-item">Doxygen Documentation</a></li>
+                <li><a href="https://github.com/Fall25BuildingGameEngines/finalproject-alex-s" class="menu-item">GitHub Repository</a></li>
+                <li><a href="./media/PioneerGame-Packaged.zip" class="menu-item">Try the Windows build now!</a></li>
             </ul>
         </nav>
+
+        <br>
+        <h2>Post mortem</h2>
+        <p>Yeah, when they say feature creep is real, they really mean it.</p>
+        <p>I have to be fair: I did have much higher ambitions for this iteration of the engine than I was able to achieve within the given timeframe. That doesn't mean I'm not proud of how the engine has shaped up so far. I think the Node-based architecture is solid and I'm quite proud of the game developer API I wrote around nodes interaction.</p>
+        <p>Where I would like to put in more effort the next couple of weeks would probably be on optimization, specifically trying to get rid of most "class" objects and replace them with structs. While the GC-managed lifetime of class objects has made iteration very quick, it has also burdened the game engine engineer in me, where I can never quite be sure if a certain Node or some other class object will ever get deallocated, either because there's some random reference to it stored somewhere, or because of some cyclical reference.</p>
+        <p>Additionally, I would probably put a lot more work into visual debugging tools, as I really could have used those. Perhaps tracy integration? It was quite trying to guess if the collision code really does not work, or if I've messed up the transform somehow and placed it far from where it's supposed to be.</p>
+        <p>Which brings me to my final potential place for improvement: defining scene hierarchies in lua would be amazing. I almost had everything implemented in Lua for this final project, but I had to cut it very late, since it was extremely buggy and I'm aiming for stability due to grading constraints.</p>
+        <p>Overall, I'm very happy with how the project turned out, and I look forward to improving it further in the future!</p>
     </div>
 
 </body>
